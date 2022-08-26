@@ -5,6 +5,16 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CTeleport.Api", "CTeleport.Api\CTeleport.Api.csproj", "{2B170FBF-0F7D-42F4-B105-91B99F6B48D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTeleport.Persistence", "CTeleport.Persistence\CTeleport.Persistence.csproj", "{71C94697-D8F1-41A6-B7A3-D80D71BEC4FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTeleport.Service", "CTeleport.Service\CTeleport.Service.csproj", "{055C1DFD-1F46-4A48-A1B8-A33F1C455AD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTeleport.Model", "CTeleport.Model\CTeleport.Model.csproj", "{F1419BCC-BE8B-4B79-9826-20C21BD6A81D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTeleport.Core", "CTeleport.Core\CTeleport.Core.csproj", "{1E71C53A-A1B5-4E28-82D5-B012B691F5A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTeleport.Test", "CTeleport.Test\CTeleport.Test.csproj", "{C56BC9A4-A7E5-4220-91F5-C9059FE98530}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,26 @@ Global
 		{2B170FBF-0F7D-42F4-B105-91B99F6B48D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B170FBF-0F7D-42F4-B105-91B99F6B48D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B170FBF-0F7D-42F4-B105-91B99F6B48D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71C94697-D8F1-41A6-B7A3-D80D71BEC4FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71C94697-D8F1-41A6-B7A3-D80D71BEC4FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71C94697-D8F1-41A6-B7A3-D80D71BEC4FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71C94697-D8F1-41A6-B7A3-D80D71BEC4FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{055C1DFD-1F46-4A48-A1B8-A33F1C455AD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{055C1DFD-1F46-4A48-A1B8-A33F1C455AD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{055C1DFD-1F46-4A48-A1B8-A33F1C455AD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{055C1DFD-1F46-4A48-A1B8-A33F1C455AD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1419BCC-BE8B-4B79-9826-20C21BD6A81D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1419BCC-BE8B-4B79-9826-20C21BD6A81D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1419BCC-BE8B-4B79-9826-20C21BD6A81D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1419BCC-BE8B-4B79-9826-20C21BD6A81D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E71C53A-A1B5-4E28-82D5-B012B691F5A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E71C53A-A1B5-4E28-82D5-B012B691F5A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E71C53A-A1B5-4E28-82D5-B012B691F5A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E71C53A-A1B5-4E28-82D5-B012B691F5A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C56BC9A4-A7E5-4220-91F5-C9059FE98530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C56BC9A4-A7E5-4220-91F5-C9059FE98530}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C56BC9A4-A7E5-4220-91F5-C9059FE98530}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C56BC9A4-A7E5-4220-91F5-C9059FE98530}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
