@@ -3,6 +3,7 @@ using CTeleport.Model.ApiResultModel;
 using CTeleport.Model.Models;
 using CTeleport.Service.Interfaces;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,12 @@ namespace CTeleport.Service.Services
     {
         private readonly ICacheManager<AirportInfoModel> _cacheManager;
         private readonly IConfiguration _configuration;
-        public AirportService(ICacheManager<AirportInfoModel> cacheManager, IConfiguration configuration)
+        private readonly ILogger<AirportService> _logger;
+        public AirportService(ICacheManager<AirportInfoModel> cacheManager, IConfiguration configuration, ILogger<AirportService> logger)
         {
             _cacheManager = cacheManager;
             _configuration = configuration;
+            _logger = logger;
         }
         
         public async Task<AirportInfoModel> GetAirportInfoAsync(string airportCode)
@@ -33,6 +36,7 @@ namespace CTeleport.Service.Services
             var response = string.Empty;
             string teleportDevUrl = _configuration["AppSettings:TelePortDevUrl"].ToString();
             string endPoint = $"{teleportDevUrl}{airportCode.ToUpper(new CultureInfo("en-US", false))}";
+            _logger.LogInformation($"Get Endpoint : {endPoint}");
             using (var client = new HttpClient())
             {
                 HttpResponseMessage result = await client.GetAsync(endPoint);
@@ -40,6 +44,7 @@ namespace CTeleport.Service.Services
                 {
                     response = await result.Content.ReadAsStringAsync();
                     airportInfo = Newtonsoft.Json.JsonConvert.DeserializeObject<AirportInfoModel>(response);
+                    _logger.LogInformation($"response : {airportInfo}");
                     //add to cache
                     if (airportInfo != null)
                     {

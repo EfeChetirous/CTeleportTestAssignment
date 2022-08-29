@@ -13,19 +13,29 @@ namespace CTeleport.Api.Controllers
     public class DistanceCalculationController : ControllerBase
     {
         private readonly IDistanceCalculationService _distanceCalculationService;
-        public DistanceCalculationController(IDistanceCalculationService distanceCalculationService)
+        private readonly ILogger<DistanceCalculationController> _logger;
+        public DistanceCalculationController(IDistanceCalculationService distanceCalculationService, ILogger<DistanceCalculationController> logger)
         {
             _distanceCalculationService = distanceCalculationService;
+            _logger = logger;
         }
 
         // GET api/<DistanceCalculation>/distanceCalculationRequest
         [HttpGet]
         [ProducesResponseType(typeof(Result), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<Result> Get([FromQuery] DistanceCalculationRequestModel request)
+        public async Task<IActionResult> Get([FromQuery] DistanceCalculationRequestModel request)
         {
-            return await _distanceCalculationService.GetDistanceAsync(request);
+            try
+            {
+                return Ok(await _distanceCalculationService.GetDistanceAsync(request));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"An error has been occured! error message : {ex.Message}");
+                return Problem(detail: ex.Message);
+            }
         }
-        
+
     }
 }
